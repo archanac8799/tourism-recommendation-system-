@@ -1,0 +1,20 @@
+{% extends "login_template.html" %}
+{% load static%}
+{% block title %}
+Login Here
+{% endblock %}
+
+
+
+{% block content %}
+     <form method="post" class="from-group">
+     	<h2 style="text-align:center;font-family: Lucida Sans Unicode, Lucida Grande, sans-serif">
+      <img class="avatar" src="{% static 'media/avatar.png' %}"><br>
+      Login
+    </h2>
+	{% csrf_token %}
+	{{form}}
+	<p>Don't have an accoount? Create one <a href="/register">here</a></p>
+	<button type="submit" class="btn2">Login</button>	
+    </form>
+{% endblock %}
