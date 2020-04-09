@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+{% block title %} {% endblock %}
+
+<link rel="icon" type="image/gif/png" href="{% static '/media/palm-tree.png' %}"></head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+<link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Grand+Hotel" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'w3.css' %}">
+<link rel="stylesheet" href="{% static 'flipbox.css' %}">
+<link rel="stylesheet" href="{% static 'wtstyle1.css' %}">
+<script type="text/javascript" src="{% static 'jquery-3.4.1.min.js' %}">
+</script> 
+    <script type="text/javascript" src="{% static 'ajax.js' %}">
+      
+    </script>
+
+
+</head>     
+
+
+
+<body class="w3-white">
+
+
+
+<div class=" ">
+<a href="#" class="w3-bar-item w3-button w3-left w3-text-red"><img src="{% static '/media/palm-tree.png' %}" height="50px" width="60px"></img><big style="font-size: 40px ;text-align:center; font-style:italic;font-family: 'Grand Hotel', cursive">Happy Travel</big></a>
+<!--Make sure the form has the autocomplete function switched off:-->
+{% if user.is_authenticated %}
+<a href="logout/" class="w3-bar-item w3-button w3-right " style="font-size:20px">LOG OUT</a>
+{% else %}
+<a href="login/" class="w3-bar-item w3-button w3-right " style="font-size:20px">LOG IN</a>
+{% endif %}
+<!---
+<form autocomplete="off" action="action_page.php" method="_GET" >
+	<input id = "myBtn" type="submit" class="w3-right w3-red  " value="GO" name = "GO" >
+  <div class="autocomplete w3-right " >
+    <input id="myInput" type="text" name="myCountry" placeholder="Search..." class="w3-text">
+  </div>
+ ---> 
+</form>
+
+<form>
+  <input id = "myBtn" type="submit" class="w3-right w3-red  " value="GO" name = "GO" >
+    {% csrf_token %}
+    <div class="autocomplete w3-right " >
+    <input type="text" id="search" name="search" placeholder="Search..." class="w3-text"/> 
+    <ul id="search-results">
+
+
+    </ul>
+  </div>
+</form>
+
+
+
+<a href="gallery.html" class="w3-bar-item w3-button w3-right " style="font-size:20px">Gallery</a>
+<div class="w3-dropdown-hover w3-right">
+      
+	
+  <a href="#" class="w3-bar-item w3-button w3-right w3-text-red" style="font-size:20px">Home</a>
+ </div>
+ 
+ 
+ <br>
+ 
+ 
+<header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
+  <img class="w3-image" src="{% static '/media/p1.jpg' %}" alt="Travel" width="1500" height="700">
+  {% block content %}
+{% endblock %}
+</header>
+
+
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px;">
+
+  <!-- Explore Nature -->
+  <div class="w3-container">
+   
+  
+  <!-- Contact -->
+  <div class="w3-container">
+    <h2>Contact</h2>
+    <p>Let us book your next trip!</p>
+    <i class="fa fa-map-marker" style="width:30px"></i>Bangalore, India<br>
+    <i class="fa fa-phone" style="width:30px"></i> Phone: +99 1010101<br>
+    <i class="fa fa-envelope" style="width:30px"> </i> Email: happytravel@mail.com<br>
+    
+  </div>
+  
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-center w3-opacity w3-margin-bottom">
+  <h5>Find Us On</h5>
+  <div class="w3-xlarge w3-padding-16">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+  <p>Travelling is a journey to Happiness !</p>
+</footer>
+
+ 
+
+
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<title>{% block title %}{% endblock %} </title>
+<link rel="stylesheet" href="{% static 'login1.css' %}">
+<body style = "background-image: url('{% static "media/b1.jpeg" %}'); background-repeat: repeat-y;  ">
+
+<div class="bgimg" >
+  
+    <div class="container">
+	<main>
+    {% block content %}
+    {% endblock %}
+  </main>
+    
+  </div>
+</div>
+
+
+
+</body>
+</html>

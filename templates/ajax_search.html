@@ -1,0 +1,11 @@
+{% if skills.count > 0 %}
+
+
+{% for skill in skills%}
+<!-- need to change the href tags based on the search results -->
+<li><a href="/skills/get/{{pk}}/{{skill.place}}/">{{skill.place}}</a>  </li>
+
+{% endfor %}
+{% else %}
+<li>None to show</li>
+{% endif %}
